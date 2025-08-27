@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Proyecto NNA - Agenciamiento y Expresión</title>
+
+    <link rel="stylesheet" href="./css/style.css">
+    <style>
+
+    </style>
+</head>
+
+<body>
+    <!-- NAVIGATION -->
+    <nav>
+        <div class="logo">Proyecto NNA</div>
+        <ul>
+            <li><a href="#" class="active">Home</a></li>
+            <li><a href="#">Personas del Proyecto</a></li>
+            <li><a href="#">Secciones</a></li>
+            <li><a href="#">Mapa de Ayuda</a></li>
+            <li><a href="#">Contacto</a></li>
+        </ul>
+    </nav>
+
+    <!-- HERO -->
+    <section class="hero">
+  <!-- Lienzo 3D de fondo -->
+  <canvas id="heroCanvas"></canvas>
+
+  <!-- Texto sobre la escena -->
+  <div class="hero-text">
+    <h1>interactua con nuestro mundo</h1>
+    <p>
+     lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+    </p>
+    <button>Explora</button>
+  </div>
+</section>
+
+    <!-- ABOUT -->
+    <section class="about">
+        <img src="https://images.unsplash.com/photo-1544717297-fa95b6ee9643?w=500&h=400&fit=crop"
+            alt="NNA en actividad artística">
+        <div class="about-text">
+            <h2>Sobre el Proyecto</h2>
+            <p>Visibilizamos y fortalecemos el agenciamiento de niñas, niños y adolescentes en condición de movilidad,
+                reconociéndolos como sujetos de derecho y actores sociales activos.</p>
+            <p>A través de procesos artísticos y educativos interdisciplinarios, promovemos la construcción de paz desde
+                la experiencia vivida y la capacidad transformadora de los NNA.</p>
+            <button>Conocer Más</button>
+        </div>
+    </section>
+    
+    <!-- TRAILER -->
+<section class="trailer">
+  <div class="trailer-content">
+    <h2>Trailer del Proyecto</h2>
+    <p>
+      Descubre en pocos minutos la esencia del proyecto: voces, arte y transformación 
+      desde la mirada de niñas, niños y adolescentes en movimiento.
+    </p>
+
+    <div class="trailer-video">
+      <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ"
+              title="Trailer del proyecto"
+              frameborder="0"
+              allowfullscreen></iframe>
+    </div>
+
+    <button>Ver Completo</button>
+  </div>
+</section>
+
+    <!-- MAPA -->
+    <section class="map-section">
+        <h2>Encuentra Apoyo Cerca de Ti</h2>
+        <div class="map-container">
+            <iframe src="https://www.arcgis.com/apps/mapviewer/index.html" width="100%" height="100%"
+                title="Mapa interactivo de puntos de ayuda">
+            </iframe>
+        </div>
+    </section>
+
+
+<!-- RECURSOS -->
+<section class="recursos">
+  <h2>Recursos</h2>
+
+  <!-- Swiper Container -->
+  <div class="swiper recursosSwiper">
+    <div class="swiper-wrapper">
+
+      <!-- Recurso -->
+      <div class="swiper-slide recurso-card">
+        <p>"Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor."</p>
+        <h3>Cameron Rogers</h3>
+      </div>
+
+      <div class="swiper-slide recurso-card">
+        <p>"Donec ullamcorper nulla non metus auctor fringilla. Cras justo odio."</p>
+        <h3>Cardarion Hart</h3>
+      </div>
+
+      <div class="swiper-slide recurso-card">
+        <p>"La danza me ayudó a expresar lo que sentía y a conectarme con otros."</p>
+        <h3>Gladys Kanyinda</h3>
+      </div>
+
+      <div class="swiper-slide recurso-card">
+        <p>"Gracias al arte encontré un espacio seguro para contar mi historia."</p>
+        <h3>Katayama Fumiki</h3>
+      </div>
+
+    </div>
+
+    <!-- Controles -->
+    <div class="swiper-pagination"></div>
+    <div class="swiper-button-prev"></div>
+    <div class="swiper-button-next"></div>
+  </div>
+</section>
+
+
+
+
+
+    <!-- EXPLORA POR CLASE -->
+    <section class="classes">
+  <h2>Explora por Disciplina Artística</h2>
+  <div class="class-grid">
+
+    <div class="class-card" onclick="window.location.href='#danza'">
+      <img src="https://images.unsplash.com/photo-1547153760-18fc86324498?w=300&h=200&fit=crop" alt="Danza expresiva">
+      <div class="content">
+        <h3>Danza</h3>
+        <p>Metodología expresiva a través del movimiento corporal. Explora la narrativa del cuerpo en movimiento.</p>
+        <button>Explorar Danza</button>
+      </div>
+    </div>
+
+    <div class="class-card" onclick="window.location.href='#artes'">
+      <img src="https://images.unsplash.com/photo-1513475382585-d06e58bcb0e0?w=300&h=200&fit=crop" alt="Pintura creativa">
+      <div class="content">
+        <h3>Artes Visuales</h3>
+        <p>Exploración creativa con técnicas visuales. El color y la forma como lenguaje de expresión.</p>
+        <button>Explorar Artes</button>
+      </div>
+    </div>
+
+    <div class="class-card" onclick="window.location.href='#musica'">
+      <img src="https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?w=300&h=200&fit=crop" alt="Música colaborativa">
+      <div class="content">
+        <h3>Música</h3>
+        <p>El poder del sonido en la expresión NNA. Creación colectiva y narrativas sonoras.</p>
+        <button>Explorar Música</button>
+      </div>
+    </div>
+
+  </div>
+  <button>Conoce Más</button>
+</section>
+
+<!-- TESTIMONIOS -->
+<section class="testimonials">
+  <h2>Voces de Transformación</h2>
+  <div class="testimonial-list">
+
+    <div class="testimonial-card">
+      <img src="https://via.placeholder.com/120" alt="Testimonio 1">
+      <div class="testimonial-content">
+        <h3>Descubriendo mi voz</h3>
+        <p>"Este proyecto me permitió descubrir mi voz y compartirla con otros. A través del arte pude contar mi historia sin miedo."</p>
+        <button onclick="window.open('https://open.spotify.com/track/3n3Ppam7vgaVa1iaRUc9Lp','_blank')">
+          ▶ Escuchar
+        </button>
+      </div>
+    </div>
+
+    <div class="testimonial-card">
+      <img src="https://via.placeholder.com/120" alt="Testimonio 2">
+      <div class="testimonial-content">
+        <h3>Expresando emociones</h3>
+        <p>"Gracias al arte pude expresar mis emociones y sentirme acompañada. Encontré una familia en este espacio creativo."</p>
+        <button onclick="window.open('https://open.spotify.com/track/4uLU6hMCjMI75M1A2tKUQC','_blank')">
+          ▶ Escuchar
+        </button>
+      </div>
+    </div>
+
+    <div class="testimonial-card">
+      <img src="https://via.placeholder.com/120" alt="Testimonio 3">
+      <div class="testimonial-content">
+        <h3>Compartiendo experiencias</h3>
+        <p>"El proyecto me enseñó que mis experiencias son valiosas. Ahora ayudo a otros niños a encontrar su propia voz."</p>
+        <button onclick="window.open('https://open.spotify.com/track/6UelLqGlWMcVH1E5c4H7lY','_blank')">
+          ▶ Escuchar
+        </button>
+      </div>
+    </div>
+
+  </div>
+  <button>Conoce Mas</button>
+</section>
+
+
+    <!-- YOUTUBE -->
+    <section class="youtube-section">
+        <div>
+            <h2>Explora Más en Video</h2>
+            <p>Conoce experiencias, voces y procesos artísticos que transforman realidades desde el agenciamiento de
+                NNA.</p>
+        </div>
+        <div>
+            <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" frameborder="0" allowfullscreen
+                title="Video del proyecto">
+            </iframe>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <p>© 2025 Proyecto NNA - Agenciamiento y Expresión</p>
+        <p>Todos los derechos reservados</p>
+        <p>
+            <a href="#">Facebook</a> |
+            <a href="#">Instagram</a> |
+            <a href="#">YouTube</a> |
+            <a href="#">Contacto</a>
+        </p>
+    </footer>
+
+    <!-- THREE.JS -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/loaders/GLTFLoader.js"></script>
+
+<script>
+  const canvas = document.getElementById("heroCanvas");
+
+  // Escena
+  const scene = new THREE.Scene();
+
+  // Cámara
+  const camera = new THREE.PerspectiveCamera(
+    60,
+    window.innerWidth / window.innerHeight,
+    0.1,
+    1000
+  );
+  camera.position.set(0, 1, 5);
+
+  // Renderizador
+  const renderer = new THREE.WebGLRenderer({ canvas, antialias: true });
+  renderer.setSize(window.innerWidth, window.innerHeight);
+  renderer.setPixelRatio(window.devicePixelRatio);
+
+  // Luz
+  const ambientLight = new THREE.AmbientLight(0xffffff, 0.5);
+  scene.add(ambientLight);
+
+  const directionalLight = new THREE.DirectionalLight(0xffffff, 1);
+  directionalLight.position.set(5, 5, 5);
+  scene.add(directionalLight);
+
+  // ===== Estrellas (fondo) =====
+  function createStars() {
+    const geometry = new THREE.BufferGeometry();
+    const starCount = 2000;
+    const positions = [];
+
+    for (let i = 0; i < starCount; i++) {
+      positions.push(
+        (Math.random() - 0.5) * 2000,
+        (Math.random() - 0.5) * 2000,
+        (Math.random() - 0.5) * 2000
+      );
+    }
+
+    geometry.setAttribute(
+      "position",
+      new THREE.Float32BufferAttribute(positions, 3)
+    );
+
+    const material = new THREE.PointsMaterial({ color: 0xffffff, size: 1 });
+    const stars = new THREE.Points(geometry, material);
+    scene.add(stars);
+  }
+  createStars();
+
+  // ===== Planeta =====
+  const loader = new THREE.TextureLoader();
+  const planetTexture = loader.load("https://threejs.org/examples/textures/planets/earth_atmos_2048.jpg");
+  const planetMaterial = new THREE.MeshStandardMaterial({ map: planetTexture });
+  const planet = new THREE.Mesh(new THREE.SphereGeometry(1.2, 64, 64), planetMaterial);
+  scene.add(planet);
+
+  // ===== Animación =====
+  function animate() {
+    requestAnimationFrame(animate);
+
+    // Rotación del planeta
+    planet.rotation.y += 0.002;
+
+    // Movimiento sutil de cámara (como flotando)
+    const time = Date.now() * 0.0003;
+    camera.position.x = Math.sin(time) * 5;
+    camera.position.z = Math.cos(time) * 5;
+    camera.lookAt(0, 0, 0);
+
+    renderer.render(scene, camera);
+  }
+  animate();
+
+  // ===== Resize =====
+  window.addEventListener("resize", () => {
+    camera.aspect = window.innerWidth / window.innerHeight;
+    camera.updateProjectionMatrix();
+    renderer.setSize(window.innerWidth, window.innerHeight);
+  });
+</script>
+
+    <!-- Swiper JS -->
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+<script src="./JS/Testimonios.js"></script>
+
+</body>
+
+</html>
