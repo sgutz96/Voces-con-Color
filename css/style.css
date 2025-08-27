@@ -264,8 +264,9 @@ position: absolute;
 /* ================= TRAILER ================= */
 .trailer {
   background: linear-gradient(135deg, var(--color-light), var(--color-gray-100));
-  padding: var(--space-xl) var(--space-md);
+  padding: 2vh var(--space-xl);
   text-align: center;
+
 }
 
 .trailer-content {
