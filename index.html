@@ -44,13 +44,13 @@
 <section class="emociones">
   <div class="marquesina">
     <div class="marquesina-track">
-      <span>🌈 Alegría</span>
-      <span>💧 Tristeza</span>
-      <span>🔥 Pasión</span>
-      <span>🤝 Solidaridad</span>
-      <span>🌱 Esperanza</span>
-      <span>💡 Creatividad</span>
-      <span>✨ Confianza</span>
+      <span>Alegría</span>
+      <span>Tristeza</span>
+      <span>Pasión</span>
+      <span>Solidaridad</span>
+      <span>Esperanza</span>
+      <span>Creatividad</span>
+      <span>Confianza</span>
     </div>
   </div>
 </section>
@@ -90,14 +90,28 @@
 </section>
 
     <!-- MAPA -->
-    <section class="map-section">
-        <h2>Encuentra Apoyo Cerca de Ti</h2>
-        <div class="map-container">
-            <iframe src="https://www.arcgis.com/apps/mapviewer/index.html" width="100%" height="100%"
-                title="Mapa interactivo de puntos de ayuda">
-            </iframe>
-        </div>
-    </section>
+<section class="map-section">
+  <div class="map-header">
+    <h2>Mapas Interactivos - Regiones de Colombia</h2>
+    <p>Explora diferentes capas temáticas con datos geográficos en tiempo real.</p>
+  </div>
+
+  <div class="map-tabs">
+    <button class="tab-button active" data-map="zomac">ZOMAC</button>
+    <button class="tab-button" data-map="parques">Parques Naturales</button>
+    <button class="tab-button" data-map="proteccion">Áreas de Protección</button>
+    <button class="tab-button" data-map="amazonas">Violencia Amazonas</button>
+    <button class="tab-button" data-map="putumayo">Violencia Putumayo</button>
+  </div>
+
+  <div class="map-content-wrapper">
+    <div class="map-content active" id="zomac" data-src="//usb-ing-multi.maps.arcgis.com/apps/Embed/index.html?webmap=37dacfbbe7ee4d6b84119d50acfedf3f&extent=-85.8306,-5.5846,-62.8472,5.8878"></div>
+    <div class="map-content" id="parques" data-src="//usb-ing-multi.maps.arcgis.com/apps/Embed/index.html?webmap=29f4c6d2b6da444f878a91d7cd2dc99b&extent=-79.1677,-2.3881,-67.676,3.3552"></div>
+    <div class="map-content" id="proteccion" data-src="//usb-ing-multi.maps.arcgis.com/apps/Embed/index.html?webmap=75ee39ee619245408f2a9930b82f06e9&extent=-85.6935,-10.914,-39.7267,11.916"></div>
+    <div class="map-content" id="amazonas" data-src="//usb-ing-multi.maps.arcgis.com/apps/Embed/index.html?webmap=9a8e1fe5afdb4e7cb0729cdf871e8a5c&extent=-80.4749,-7.7664,-57.4915,2.4701"></div>
+    <div class="map-content" id="putumayo" data-src="//usb-ing-multi.maps.arcgis.com/apps/Embed/index.html?webmap=354a809af55648cbbe35527fbaccaf16&extent=-81.3153,-1.8378,-69.8236,3.2907"></div>
+  </div>
+</section>
 
 
 <!-- RECURSOS -->
@@ -251,94 +265,14 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/loaders/GLTFLoader.js"></script>
 
-<script>
-  const canvas = document.getElementById("heroCanvas");
-
-  // Escena
-  const scene = new THREE.Scene();
-
-  // Cámara
-  const camera = new THREE.PerspectiveCamera(
-    60,
-    window.innerWidth / window.innerHeight,
-    0.1,
-    1000
-  );
-  camera.position.set(0, 1, 5);
-
-  // Renderizador
-  const renderer = new THREE.WebGLRenderer({ canvas, antialias: true });
-  renderer.setSize(window.innerWidth, window.innerHeight);
-  renderer.setPixelRatio(window.devicePixelRatio);
-
-  // Luz
-  const ambientLight = new THREE.AmbientLight(0xffffff, 0.5);
-  scene.add(ambientLight);
-
-  const directionalLight = new THREE.DirectionalLight(0xffffff, 1);
-  directionalLight.position.set(5, 5, 5);
-  scene.add(directionalLight);
-
-  // ===== Estrellas (fondo) =====
-  function createStars() {
-    const geometry = new THREE.BufferGeometry();
-    const starCount = 2000;
-    const positions = [];
-
-    for (let i = 0; i < starCount; i++) {
-      positions.push(
-        (Math.random() - 0.5) * 2000,
-        (Math.random() - 0.5) * 2000,
-        (Math.random() - 0.5) * 2000
-      );
-    }
-
-    geometry.setAttribute(
-      "position",
-      new THREE.Float32BufferAttribute(positions, 3)
-    );
-
-    const material = new THREE.PointsMaterial({ color: 0xffffff, size: 1 });
-    const stars = new THREE.Points(geometry, material);
-    scene.add(stars);
-  }
-  createStars();
-
-  // ===== Planeta =====
-  const loader = new THREE.TextureLoader();
-  const planetTexture = loader.load("https://threejs.org/examples/textures/planets/earth_atmos_2048.jpg");
-  const planetMaterial = new THREE.MeshStandardMaterial({ map: planetTexture });
-  const planet = new THREE.Mesh(new THREE.SphereGeometry(1.2, 64, 64), planetMaterial);
-  scene.add(planet);
-
-  // ===== Animación =====
-  function animate() {
-    requestAnimationFrame(animate);
-
-    // Rotación del planeta
-    planet.rotation.y += 0.002;
-
-    // Movimiento sutil de cámara (como flotando)
-    const time = Date.now() * 0.0003;
-    camera.position.x = Math.sin(time) * 5;
-    camera.position.z = Math.cos(time) * 5;
-    camera.lookAt(0, 0, 0);
-
-    renderer.render(scene, camera);
-  }
-  animate();
-
-  // ===== Resize =====
-  window.addEventListener("resize", () => {
-    camera.aspect = window.innerWidth / window.innerHeight;
-    camera.updateProjectionMatrix();
-    renderer.setSize(window.innerWidth, window.innerHeight);
-  });
-</script>
+<script src="./JS/Banner.js"></script>
 
     <!-- Swiper JS -->
 <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 <script src="./JS/Testimonios.js"></script>
+
+ <!-- mapa -->
+  <script src="./JS/Mapa.js"></script>
 
 </body>
 
